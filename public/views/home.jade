@@ -1,0 +1,22 @@
+extends layout
+
+block meta-info
+    //-
+        width : controls the size of the view port
+        initial-scale : controls the zoom level when the page is first loaded
+        maximum-scale : maximum value of scaling the user could do
+        minimum-scale : minimum value of scaling the user could do
+        user-scalable : enable/disable zooming for the user
+    -//
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    //- choose which version of IE to render the page in
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+block content
+    p
+        | Hello World
+        | Hello Faith
+
+block scripts
+    script(src='/bower_components/requirejs-plugins/lib/require.js', data-main='public/scripts/main')
+    script(src='/public/requireConfig.js')

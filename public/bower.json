@@ -1,0 +1,20 @@
+{
+  "name": "es6express",
+  "homepage": "https://github.com/tjpsantiago/es6express",
+  "authors": [
+    "Tom Jordan Santiago <tom.santiago@nokia.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.3.5"
+  }
+}
