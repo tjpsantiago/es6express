@@ -28,11 +28,8 @@ export class Application {
 
         this.app.use(cookieparser());
 
-        // add project folder to search folder
-        this.app.use('/public', express.static(path.join(__dirname, '../public')));
-
         // set application's 'views' root folder
-        this.app.set('views', path.join(__dirname, '../public/views'));
+        this.app.set('views', path.join(__dirname, '../../frontend/views'));
         // set view engine for the application
         this.app.set('view engine', 'jade');
 
@@ -53,7 +50,15 @@ export class Application {
         });
 
         this.app.get('/', function(req, res) {
-            res.render('home');
+            res.render('home/index', {title : "Express JS on ES6"});
+        });
+
+        this.app.get('/login', function(req, res) {
+            res.render('login/index', {title : "Express JS Login"});
+        });
+
+        this.app.post('/login/:username/:password', function(req, res) {
+            console.log("username ")
         });
 
         this.app.use(function(req, res, next) {
