@@ -1,0 +1,46 @@
+extends ../layout
+
+block links
+    link(href="bower_components/bootstrap-ocean-latest/css/bootstrapOcean.min.css" rel="stylesheet")
+    link(href="bower_components/dropzone/dist/dropzone.css" rel="stylesheet")
+
+block content
+    .container
+        .row
+            .col-sm-8.col-sm-offset.ob-login
+                .clearfix
+                    .ob-logo
+                .ob-login-form.ob-z3.ob-panel-primary
+                    .panel-body
+                        form.ng-pristine.ng-scope.ng-invalid-required.ng-submitted(role='form', method='post', action='{{getUrl()}}')
+                            h1
+                                span.text-primary ExpressJS on ES6
+                            center
+                                h5
+                                    span.text-primary Keeping Quality and Performance within our Control
+                            span.text-primary Version 1.0.0
+                            .row
+                                .col-md-6
+                                    input.form-control.ng-pristine.ng-invalid-required.ng-touched(name='username', placeholder='username', required, autofocus)
+                                .col-md-6
+                                    input.form-control.ng-pristine.ng-invalid-required.ng-untouched(type='password', name='password', placeholder='password', required)
+                            .row
+                                br
+                            .row
+                                .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                    button.ob-btn.btn.btn-primary.waves-effect.pull-right
+                                        span.fa.fa-key
+                                        |   Log In
+                            if message
+                                .row
+                                    h3
+                                        label(class='label label-danger' style='width:100%;display:block') #{message}
+                        hr
+                        .row
+                            .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                                p.legal.justified
+                                |   You are about to access a private system.
+                                |   This system is for the use of authorized personnel only.
+                                |   All connections are logged. Any unauthorized access or
+                                |   attempts may be punished to the fullest extent possible
+                                |   under the applicable legislation.
